@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <div>
+            <h1>Lessons shop</h1>
+            <div class="cardContainer">
+                <div v-for="product in products" :key="Math.floor(Math.random() * 1000)*Date.now()">
+                    <div class="cart">
+                        <p>Subject:{{product.subject}}</p>
+                        <p>Price:{{product.price}}</p>
+                        <p>Spaces:{{product.spaces}}</p>
+                        <p>Location:{{product.location}}</p>
+                        <img class="icon"  v-bind:src="iconSrc" style="width:50px;height:50px" />
+                        <button v-on:click="buy(product)" v-bind:disabled="product.spaces == 0">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    </div>
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script type="text/javascript" src="vueInstance.js"></script>
+</body>
+
+</html>
