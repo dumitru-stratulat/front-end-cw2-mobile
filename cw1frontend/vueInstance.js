@@ -22,7 +22,8 @@ let app = new Vue({ // the root Vue instance
             }
           }
     },
-    beforeMount(){
+   // beforeMount(){ for clienttside rendering
+        created() {
         this.getLessons()
      },
 })
